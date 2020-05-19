@@ -3,14 +3,13 @@ import { ThemeContext } from 'styled-components';
 import Switch from 'react-switch';
 import { shade } from 'polished';
 
+import { useTheme } from '../../hooks/theme';
+
 import { Container } from './styles';
 
-interface HeaderProps {
-  toggleTheme(): void;
-}
-
-const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
+const Header: React.FC = () => {
   const { colors, title } = useContext(ThemeContext);
+  const { toggleTheme } = useTheme();
 
   return (
     <Container>
